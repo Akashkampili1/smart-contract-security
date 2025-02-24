@@ -5,15 +5,14 @@ Reentrancy is one of the most common vulnerabilities in smart contracts. This at
 
 ## Project Structure
 ```
-reentrancy/
+Reentrancy Attacks/
 ├── contracts/
-│   ├── Reentrancy.sol       # Vulnerable contract
-│   ├── ReentrancyAttack.sol # Attack contract
+│   ├── ReentrancyVulnerable.sol # Vulnerable contract
+│   ├── ReentrancyAttacker.sol # Attack contract
 ├── scripts/
-│   ├── deploy.js            # Deployment script
 │   ├── exploit.js           # Exploit script
 ├── test/
-│   ├── reentrancy.test.js   # Test cases
+│   ├── Lock.js   
 ├── README.md
 ├── hardhat.config.js        # Hardhat configuration
 ├── package.json
@@ -24,7 +23,7 @@ reentrancy/
 ### 1. Install Dependencies
 Ensure you have [Node.js](https://nodejs.org/) installed, then run:
 ```sh
-npm install --save-dev hardhat ethers chai
+npm install --save-dev hardhat ethers 
 ```
 
 ### 2. Start Hardhat Local Node
@@ -40,11 +39,6 @@ npx hardhat run scripts/deploy.js --network localhost
 ### 4. Run the Exploit
 ```sh
 npx hardhat run scripts/exploit.js --network localhost
-```
-
-### 5. Test the Attack
-```sh
-npx hardhat test
 ```
 
 ## Explanation
